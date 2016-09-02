@@ -8,4 +8,4 @@
    - `auread` maakt gebruik van een .au file. .au is Unix-gerelateerd, dus wij zullen eerder voor .wav gaan. 
    - `loadwave` geeft een matrix en vectors als output.
    - `wavread` geeft een output in `y` (gesamplede data), `Fs` of frequentie in Hertz en `bits` of het aantal bits per sample gebruikt om de data in de file te encoden. 
-* 
+* We gebruiken momenteel 'leeroy jenkins' als audio file, maar heeft een te hoge amplitude

@@ -1,8 +1,12 @@
-// .wav file destination
-spirit="D:\Users\michi\Documents\SourceTree\LightOrgan\scilab\leeroy.wav";
+// start over
+clf();
+clear();
 
-// read .wav-file: y = 
-[y,Fs,bits] = wavread(spirit);
+// .wav file destination
+rainbow="D:\Users\michi\Documents\SourceTree\LightOrgan\scilab\rainbow.wav";
+
+// read .wav-file
+[y,Fs,bits] = wavread(rainbow);
 
 playsnd(y,Fs);
 
