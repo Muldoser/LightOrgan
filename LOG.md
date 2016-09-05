@@ -62,8 +62,7 @@
 
 <img src="./img/scilab/rainbow-triple.gif"/>
 
-* Met `wfir` bepalen we de filtercoefficienten, -amplitude en frequentie:
-
+* Met `wfir` bepalen we de filterco&euml;fficienten, -amplitude en frequentie:
 
         [LD_coeff,amplitude,f] = wfir("lp",1600,[0.047 0],"hm", [0 0]);
 
@@ -80,3 +79,43 @@
 * Zo krijgen we de lowpassfilter te zien op onze niet-periodieke waardes van ons signaal (na de Fourier transformatie dus).
 
 <img src="./img/scilab/rainbow-lowpass.gif"/>
+
+##### Highpass filter
+* De highpass filter kunnen we analoog met de lowpass filter instellen.
+
+* We specifieren in de `wfir` dat het gaat om de highpass met `'hp'`. De console meldt dat de filter order oneven moet zijn. We gebruiken hier dus 1601.
+
+* Verder gebruiken we als frequentieparameter: 2050/16000 = 0.128125
+
+* De `wfir`-functie ziet er als volgt uit:
+
+        [LD_coeff,amplitude,f] = wfir("hp",1601,[0.128125 0],"hm", [0 0]);
+
+* Zo krijgen we de higpass filter te zien
+
+<img src="./img/scilab/rainbow-highpass.gif"/>
+
+##### Bandpass filter
+
+* Hetzelfde geldt voor de bandpass filter.
+
+* Bij de bandpass moeten we twee frequentieparameters specifieren:
+        + 800/16000 = 0.05
+        + 2000/16000 = 0.125
+
+*  De `wfir`-functie ziet er als volgt uit:
+
+        [LD_coeff,amplitude,f] = wfir("bp",1601,[0.05 0.125],"hm", [0 0]);
+
+* Met het resultaat:
+
+<img src="./img/scilab/rainbow-bandpass.gif"/>
+
+* Alle filters samen geeft:
+
+<img src="./img/scilab/rainbow-allfilters.gif"/>
+
+* Met alle signalen tezamen:
+
+<img src="./img/scilab/rainbow-triple-filter.gif"/>
+
