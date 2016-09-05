@@ -27,9 +27,9 @@ Ons lichtorgel of *lightorgan* heeft als doel een inkomend signaal op te delen i
 
 Als signaal hanteren we *.wav*-geluidsbestand. Specifieker is dit .wav-bestand afkomstig van het bekende youtube filmpje ['Double rainbow guy'](https://www.youtube.com/watch?v=99E9fDgZZuE).
 
-###### Inlezen geluidssignaal
+##### Inlezen geluidssignaal
 
-* **loadwave.sce**
+File: */scilab/loadwave.sce*
 
 Het inlezen van het geluidssignaal gebeurt door de `wavread()`-functie in scilab. [`wavread`](https://help.scilab.org/docs/6.0.0/en_US/wavread.html) geeft een output in `y` (gesamplede data), `Fs` of frequentie in Hertz en `bits` of het aantal bits per sample gebruikt om de data in de file te encoden.  
 
@@ -73,9 +73,11 @@ We spelen het signaal ook af met behulp van `playsnd()`, om te verifi&euml;ren o
 
         playsnd(y2, 16000);
 
-###### Filters
+##### Filters
 
 * **Lowpass filter of laagdoorlaatfilter**
+
+File: */scilab/lowpass.sce*
 
 Om er voor te zorgen dat de lage frequenties worden afgezonderd voor de groene LED, gebruiken we een laagdoorlaatfilter. Deze snijdt de frequenties vanaf 750Hz af, opdat we enkel deze van 0 tot 750Hz krijgen.
 
@@ -121,6 +123,8 @@ Zo krijgen we de afsnijfrequentie van de lowpassfilter te zien op onze niet-peri
 
 * **Highpass filter of hoogdoorlaatfilter**
 
+File: */scilab/highpass.sce*
+
 De highpass filter kunnen we analoog met de lowpass filter instellen. We specifieren in de `wfir` dat het gaat om de highpass met `'hp'`. De console meldt dat de filter order oneven moet zijn. We gebruiken hier dus 1601.
 
 Verder gebruiken we als frequentieparameter: 2050/16000 = 0.128125
@@ -134,6 +138,8 @@ Zo krijgen we de afsnijfrequentie van de highpass filter te zien in het frequent
 <img src="./img/scilab/rainbow-highpass.gif"/>
 
 * **Bandpass filter of banddoorlaatfilter**
+
+File: */scilab/bandpass.sce*
 
 Hetzelfde geldt voor de bandpass filter. Bij de bandpass moeten we echter wel twee frequentieparameters specifieren:
         + 800/16000 = 0.05
