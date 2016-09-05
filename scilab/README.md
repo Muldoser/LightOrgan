@@ -1,4 +1,4 @@
-# LOG
+# SciLab LOG
 
 ### Simulation in Scilab
 
@@ -25,16 +25,16 @@
 * Wanneer we ons eerste script lossen op onze 'rainbow', zien we in de variabelen dat het bestand gesampled wordt tegen een frequentie van 44100 Hz met 16 bits per sample. Dit is redelijk standaard.
 * Een plot van deze `y` output geeft
 
-<img src="./img/scilab/rainbow-44kHz.gif"/>
+<img src="../img/scilab/rainbow-44kHz.gif"/>
 
 * Met `intdec` kunnen we een nieuwe samplefrequentie instellen voor ons `y` signaal.
 * Wanneer we dit signaal plotten zien we dat het 2e signaal (rood) aanzienlijk minder samples bevat dan het eerste signaal.
 
-<img src="./img/scilab/rainbow-16kHz.gif"/>
+<img src="../img/scilab/rainbow-16kHz.gif"/>
 
 * Beide plots onder elkaar geplaatst:
 
-<img src="./img/scilab/rainbow-double.gif"/>
+<img src="../img/scilab/rainbow-double.gif"/>
 
 * Size van blauw signaal 1, `y` = 150 912
 * Size van rood signaal 2, `y2` = 54 752
@@ -56,14 +56,13 @@
 
 * Om het signaal uit ons `loadwave.sce` bestand te gebruiken zetten we het signaal om in zijn sinusoidale componenten aan de hand van de fast fourrier transform functie: `fft`
 
-<img src="./img/scilab/rainbow-fft.gif"/>
+<img src="../img/scilab/rainbow-fft.gif"/>
 
 * Tezamen:
 
-<img src="./img/scilab/rainbow-triple.gif"/>
+<img src="../img/scilab/rainbow-triple.gif"/>
 
-* Met `wfir` bepalen we de filtercoefficienten, -amplitude en frequentie:
-
+* Met `wfir` bepalen we de filterco&euml;fficienten, -amplitude en frequentie:
 
         [LD_coeff,amplitude,f] = wfir("lp",1600,[0.047 0],"hm", [0 0]);
 
@@ -79,4 +78,44 @@
 
 * Zo krijgen we de lowpassfilter te zien op onze niet-periodieke waardes van ons signaal (na de Fourier transformatie dus).
 
-<img src="./img/scilab/rainbow-lowpass.gif"/>
+<img src="../img/scilab/rainbow-lowpass.gif"/>
+
+##### Highpass filter
+* De highpass filter kunnen we analoog met de lowpass filter instellen.
+
+* We specifieren in de `wfir` dat het gaat om de highpass met `'hp'`. De console meldt dat de filter order oneven moet zijn. We gebruiken hier dus 1601.
+
+* Verder gebruiken we als frequentieparameter: 2050/16000 = 0.128125
+
+* De `wfir`-functie ziet er als volgt uit:
+
+        [LD_coeff,amplitude,f] = wfir("hp",1601,[0.128125 0],"hm", [0 0]);
+
+* Zo krijgen we de higpass filter te zien
+
+<img src="../img/scilab/rainbow-highpass.gif"/>
+
+##### Bandpass filter
+
+* Hetzelfde geldt voor de bandpass filter.
+
+* Bij de bandpass moeten we twee frequentieparameters specifieren:
+        + 800/16000 = 0.05
+        + 2000/16000 = 0.125
+
+*  De `wfir`-functie ziet er als volgt uit:
+
+        [LD_coeff,amplitude,f] = wfir("bp",1601,[0.05 0.125],"hm", [0 0]);
+
+* Met het resultaat:
+
+<img src="../img/scilab/rainbow-bandpass.gif"/>
+
+* Alle filters samen geeft:
+
+<img src="../img/scilab/rainbow-allfilters.gif"/>
+
+* Met alle signalen tezamen:
+
+<img src="../img/scilab/rainbow-triple-filter.gif"/>
+
