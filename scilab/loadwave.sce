@@ -24,13 +24,13 @@ Frequentie_FFT = abs(fft(y2));
 Fv = 16000*(0:(y2_size/2))/y2_size;
 n=size(Fv,"*");
 
-playsnd(y2);
+playsnd(y2, 16000);
 
 subplot(221);
-plot(y);
+plot(y/2);
 
 subplot(222);
-plot(y2, "r");
+plot(y2/2, "r");
 
 subplot(223);
 plot(Fv,Frequentie_FFT(1:n), "g");
