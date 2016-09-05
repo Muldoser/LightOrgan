@@ -203,3 +203,7 @@ Fc = 1/2πRC --> RC = 1/2πfc
     --> C = 1nF
     
 <img src="./schematics/BandPassFilter.png"/>
+
+* **Dit alles in één opstelling**
+
+<img src="./schematics/CompleteMultisim.png"/>
