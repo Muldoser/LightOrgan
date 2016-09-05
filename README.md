@@ -161,4 +161,49 @@ Met alle signalen tezamen:
 
 <img src="./img/scilab/rainbow-triple-filter.gif"/>
 
+##### Multisim
 
+* **Lowpass filter of laagdoorlaatfilter**
+
+Een low-pass filter om de lage frequenties door te laten: cut-off frequentie van 750Hz
+    * Formule fc = 1/2πRC komt uit op een weerstandswaarde van 220Ω en een condensator van 1µF
+
+Fc = 1/2πRC --> RC = 1/2πfc
+
+    --> R = 220Ω
+    --> C = 1μF
+
+<img src="./schematics/LowPassFilter.png"/>
+
+* **Highpass filter of hoogdoorlaatfilter**
+
+Een high-pass filter om alle frequenties boven 800Hz door te laten
+
+Fc = 1/2πRC --> RC = 1/2πfc
+
+    --> R = 750Ω
+    --> C = 0.1μF
+    
+<img src="./schematics/HighPassFilter.png"/>
+
+* **Bandpass filter of banddoorlaatfilter**
+
+Een band-pass filter om de middelmatige frequenties op te vangen: frequenties tussen 800Hz en 2kHz
+
+Low cutoff
+Fc = 1/2πRC --> RC = 1/2πfc
+
+    --> R = 2kΩ
+    --> C = 100nF
+    
+High cutoff
+Fc = 1/2πRC --> RC = 1/2πfc
+
+    --> R = 80kΩ
+    --> C = 1nF
+    
+<img src="./schematics/BandPassFilter.png"/>
+
+* **Dit alles in één opstelling**
+
+<img src="./schematics/CompleteMultisim.png"/>
