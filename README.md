@@ -165,7 +165,7 @@ Met alle signalen tezamen:
 
 * **Lowpass filter of laagdoorlaatfilter**
 
-* Een low-pass filter om de lage frequenties door te laten: cut-off frequentie van 750Hz
+Een low-pass filter om de lage frequenties door te laten: cut-off frequentie van 750Hz
     * Formule fc = 1/2πRC komt uit op een weerstandswaarde van 220Ω en een condensator van 1µF
 
 Fc = 1/2πRC --> RC = 1/2πfc
@@ -173,22 +173,22 @@ Fc = 1/2πRC --> RC = 1/2πfc
     --> R = 220Ω
     --> C = 1μF
 
-File: */schematics/lowpass.LowPassFilter.png*
+<img src="./schematics/LowPassFilter.png"/>
 
 * **Highpass filter of hoogdoorlaatfilter**
 
-* Een high-pass filter om alle frequenties boven 800Hz door te laten
+Een high-pass filter om alle frequenties boven 800Hz door te laten
 
 Fc = 1/2πRC --> RC = 1/2πfc
 
     --> R = 750Ω
     --> C = 0.1μF
     
-File: */schematics/lowpass.HighPassFilter.png*
+<img src="./schematics/HighPassFilter.png"/>
 
 * **Bandpass filter of banddoorlaatfilter**
 
-* Een band-pass filter om de middelmatige frequenties op te vangen: frequenties tussen 800Hz en 2kHz
+Een band-pass filter om de middelmatige frequenties op te vangen: frequenties tussen 800Hz en 2kHz
 
 Low cutoff
 Fc = 1/2πRC --> RC = 1/2πfc
@@ -202,4 +202,4 @@ Fc = 1/2πRC --> RC = 1/2πfc
     --> R = 80kΩ
     --> C = 1nF
     
-File: */schematics/lowpass.BandPassFilter.png*
+<img src="./schematics/BandPassFilter.png"/>
