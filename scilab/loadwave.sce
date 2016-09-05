@@ -26,11 +26,11 @@ n=size(Fv,"*");
 
 playsnd(y2);
 
-//subplot(321);
-//plot(y);
+subplot(221);
+plot(y);
 
-//subplot(322);
-//plot(y2, "r");
+subplot(222);
+plot(y2, "r");
 
-//subplot(323);
-//plot(Fv,Frequentie_FFT(1:n), "g");
+subplot(223);
+plot(Fv,Frequentie_FFT(1:n), "g");
