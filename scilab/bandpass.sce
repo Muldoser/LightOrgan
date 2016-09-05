@@ -1,4 +1,5 @@
-[LD_coeff,amplitude,f] = wfir("lp",1600,[0.047 0],"hm", [0 0]);
+//frequency order must be odd
+[LD_coeff,amplitude,f] = wfir("bp",1601,[0.05 0.125],"hm", [0 0]);
 
 // Transferfunctie via polynoom
 LD_polynoom = poly(LD_coeff, 'z', 'coeff');
