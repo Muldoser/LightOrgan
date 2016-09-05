@@ -17,14 +17,13 @@ y2 = intdec(y,conversion_factor);
 y_size = size(y,"*");
 y2_size = size(y2, "*");
 
-
 // Fast fourier transform transfers to its sinusoid components
 Frequentie_FFT = abs(fft(y2));
 //Geassocieerde frequentievector
 Fv = 16000*(0:(y2_size/2))/y2_size;
 n=size(Fv,"*");
 
-playsnd(y2, 16000);
+//playsnd(y2, 16000);
 
 subplot(221);
 plot(y/2);
